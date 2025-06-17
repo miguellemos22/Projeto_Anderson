@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGCT - Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <h1>Bem-vindo ao SGCT</h1>
+    <p>Nosso Sistema de Gestão de Chamados Técnicos ajuda você a registrar e acompanhar solicitações de suporte de forma rápida e eficiente.</p>
+
+    <div class="buttons">
+        <a class="btn" href="login.html">Login</a>
+        <a class="btn" href="cadastro.html">Cadastro</a>
+        <a class="btn" onclick="verificar()">Tela do tecnico</a>
+    </div>
+
+    <script>
+        function verificar(){
+            const pessoa = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+        if(pessoa.tipo === "tecnico"){
+            window.location.href = "atualizarChamado.html";
+        }
+    }
+    </script>
+</body>
+</html>

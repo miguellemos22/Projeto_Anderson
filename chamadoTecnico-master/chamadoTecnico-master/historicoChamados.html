@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Sistema de Chamados</title>
+  <link rel="stylesheet" href="historicoChamado.css"> <!-- Corrigido: CSS e não .js -->
+</head>
+<body>
+
+  <header>
+    <h1>Sistema de Gestão de Chamados Técnicos</h1>
+    <h3>Chamados abertos</h3>
+  </header>
+  
+  <main>
+    <section id="formNovoChamado" style="display: none; margin-top: 20px;">
+      <h2>Novo Chamado</h2>
+      <form id="formChamado">
+        <label for="tipo">Categoria:</label>
+        <select id="tipo" required>
+          <option value="">Selecione...</option>
+          <option value="admin">Administrador</option>
+          <option value="tecnico">Técnico</option>
+          <option value="user">Usuário</option>
+          <option value="guest">Convidado</option>
+        </select>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" required></textarea>
+
+        <label for="titulo">Título:</label>
+        <textarea id="titulo" required></textarea>
+
+        <label for="status">Status:</label>
+        <textarea id="status" required></textarea>
+
+        <label for="prioridade">Prioridade:</label>
+        <select id="prioridade" required>
+          <option value="">Selecione...</option>
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+
+        <button type="submit" class="btn">Enviar Chamado</button>
+      </form>
+    </section>
+
+    <section id="listaChamados" style="margin-top: 30px;">
+      <!-- Chamados serão carregados aqui -->
+    </section>
+  </main>
+
+  <script src="historicoChamado.js"></script>
+</body>
+</html>

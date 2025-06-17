@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Sistema de Chamados</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <header>
+    <h1>Sistema de Gestão de Chamados Técnicos</h1>
+  </header>
+  
+  <main>
+    <div id="botoesContainer">
+      <button id="btnAbrirChamado" class="btn">Abrir Novo Chamado</button>
+    </div>
+
+    <section id="formNovoChamado" style="display: none; margin-top: 20px;">
+      <h2>Novo Chamado</h2>
+      <form id="formChamado">
+
+        <label for="tipo">Cartegoria:</label>
+                    <select id="tipo" required>
+                        <option value="">Selecione...</option>
+                        <option value="erroSintaxe">erro de sintaxe</option>
+                        <option value="erroExecucao">erro de execucao</option>
+                        <option value="erroConfiguracao">erro de configuração</option>
+                    </select>
+
+        <label for="descricao">Descrição:</label><br>
+        <textarea id="descricao" required></textarea><br><br>
+
+        <label for="titulo">Titulo:</label><br>
+        <textarea id="titulo" required></textarea><br><br>
+
+        <label for="status">Status:</label><br>
+        <select id="prioridade" required>
+                        <option value="">Selecione...</option>
+                        <option value="alta">Aberto</option>
+                        <option value="media">Em andamento</option>
+                        <option value="baixa">Resolvido</option>
+                        <option value="baixa">Fechado</option>
+                    </select>
+
+        <label for="Prioridade">Prioridade:</label>
+                    <select id="prioridade" required>
+                        <option value="">Selecione...</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Media</option>
+                        <option value="baixa">Baixa</option>
+                    </select>
+
+
+
+        <button type="submit" class="btn">Enviar Chamado</button>
+      </form>
+    </section>
+
+    <section id="listaChamados" style="margin-top: 30px;">
+      <h2>Meus Chamados</h2>
+
+      <!-- Exemplo de card inicial -->
+      <div class="pedidoCard">
+        
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <form id="formEditarChamado" style="display:none; margin-top:20px;">
+  <h2>Editar Chamado</h2>
+  <input type="text" id="editarTitulo" placeholder="Título" required><br><br>
+  <textarea id="editarDescricao" placeholder="Descrição" required></textarea><br><br>
+  <select id="editarStatus" required>
+    <option value="Aberto">Aberto</option>
+    <option value="Em andamento">Em andamento</option>
+    <option value="Resolvido">Resolvido</option>
+    <option value="Fechado">Fechado</option>
+  </select><br><br>
+  <select id="editarPrioridade" required>
+    <option value="alta">Alta</option>
+    <option value="media">Média</option>
+    <option value="baixa">Baixa</option>
+  </select><br><br>
+  <button type="submit">Salvar Alterações</button>
+  <button type="button" id="cancelarEdicao">Cancelar</button>
+</form>
+
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
